@@ -8,15 +8,14 @@
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}",
-            "args": ["Ala", "ma", "kota"]
+            "mainClass": "${file}"
         },
         {
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "effective-parakeet_577f716c",
+            "projectName": "effective-parakeet_577f716c"
         }
     ]
 }
