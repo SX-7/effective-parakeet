@@ -11,17 +11,33 @@ public class Weekend2 {
         System.out.print("Dziś ");
         switch (c.get(Calendar.DAY_OF_WEEK)) {
             case Calendar.MONDAY:
-                System.out.println("poniedziałek");
+                System.out.print("poniedziałek");
             case Calendar.TUESDAY:
-                System.out.println("wtorek");
+                System.out.print("wtorek");
             case Calendar.WEDNESDAY:
-                System.out.println("środa");
+                System.out.print("środa");
             case Calendar.THURSDAY:
-                System.out.println("czwartek");
+                System.out.print("czwartek");
             case Calendar.FRIDAY:
-                System.out.println("piątek");
+                System.out.print("piątek");
             default:
-                System.err.println("weekend");
+                break;
+        }
+        System.out.print(", do weekendu pozostał");
+        //now we display remaining days till weekend
+        switch (c.get(Calendar.DAY_OF_WEEK)){
+            case Calendar.MONDAY:
+                System.out.print("y 4 dni.");
+            case Calendar.TUESDAY:
+                System.out.print("y 3 dni.");
+            case Calendar.WEDNESDAY:
+                System.out.print("y 2 dni.");
+            case Calendar.THURSDAY:
+                System.out.print(" 1 dzień.");
+            case Calendar.FRIDAY:
+                System.out.print("o 0 dni.");
+            default:
+                break;
         }
     }
 }
