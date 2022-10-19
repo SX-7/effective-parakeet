@@ -1,13 +1,15 @@
+package lab2;
+
 import java.util.Calendar;
 
 public class Weekend2 {
     void print() {
         Calendar c = Calendar.getInstance();
-        if (c.get(Calendar.DAY_OF_WEEK)==Calendar.SATURDAY||c.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY) {
+        if (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
             System.out.println("Mamy weekend!");
             return;
         }
-        //if weekend check failed we say the day
+        // if weekend check failed we say the day
         System.out.print("Dziś ");
         switch (c.get(Calendar.DAY_OF_WEEK)) {
             case Calendar.MONDAY:
@@ -24,8 +26,8 @@ public class Weekend2 {
                 break;
         }
         System.out.print(", do weekendu pozostał");
-        //now we display remaining days till weekend
-        switch (c.get(Calendar.DAY_OF_WEEK)){
+        // now we display remaining days till weekend
+        switch (c.get(Calendar.DAY_OF_WEEK)) {
             case Calendar.MONDAY:
                 System.out.print("y 4 dni.");
             case Calendar.TUESDAY:
