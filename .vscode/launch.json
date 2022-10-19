@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArithmeticMean",
+            "request": "launch",
+            "mainClass": "lab3.ArithmeticMean",
+            "projectName": "effective-parakeet_577f716c",
+            "args": "2 5 7 9"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
