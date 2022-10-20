@@ -3,7 +3,7 @@ package lab2;
 import java.util.Calendar;
 
 public class Weekend {
-    void howMuchTill() {
+    public void howMuchTill() {
         Calendar cd = Calendar.getInstance();
         int day = cd.get(Calendar.DAY_OF_WEEK);
         if (day > 0 && day < 6) {

@@ -3,7 +3,7 @@ package lab2;
 import java.util.Calendar;
 
 public class Weekend2 {
-    void print() {
+    public void print() {
         Calendar c = Calendar.getInstance();
         if (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
             System.out.println("Mamy weekend!");
