@@ -14,11 +14,8 @@ public class ArithmeticMean {
             a = a + Integer.parseInt(args[i]);
         }
         out_str = out_str.substring(0, out_str.length() - 2);
-        int res = a / args.length;
-        int mod = a % args.length;
-        out_str = out_str.concat(" wynosi " + res);
-        if (!(mod == 0))
-            out_str = out_str.concat(", reszta: " + mod);
+        out_str = out_str.concat(" wynosi " + (a/args.length));
+        out_str = out_str.concat(a%args.length==0?"":", reszta: " + (a%args.length));
         System.out.println(out_str);
     }
 }

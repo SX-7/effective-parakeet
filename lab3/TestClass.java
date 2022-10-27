@@ -60,8 +60,13 @@ public class TestClass {
     }
 
     public static void main(String[] args) {
-        TestClass testobj1 = new TestClass();
-        TestClass testobj2 = new TestClass();
+        if (args.length == 0) {
+            System.out.println("Brak argumentów programu.");
+            System.exit(0);
+        }
+        for (int i = 0; i < Integer.parseInt(args[0]); i++) {
+            new TestClass();
+        }
         TestClass.printClassData();
     }
 }

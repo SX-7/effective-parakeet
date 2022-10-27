@@ -9,7 +9,8 @@
             "name": "Launch TestClass",
             "request": "launch",
             "mainClass": "lab3.TestClass",
-            "projectName": "effective-parakeet_577f716c"
+            "projectName": "effective-parakeet_577f716c",
+            "args": "300"
         },
         {
             "type": "java",
