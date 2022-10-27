@@ -50,6 +50,7 @@ public class TestClass {
             out_str = out_str.concat(Integer.toString(testClass.getNumber())+". ["+Long.toString(testClass.getCreation_time())+"]\n");
         }
         System.out.println(out_str);
+        System.out.println("Liczba obiektów: "+getObj_vec().size());
     }
 
     public TestClass() {
