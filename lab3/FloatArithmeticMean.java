@@ -2,11 +2,7 @@ package lab3;
 
 public class FloatArithmeticMean {
     public static void main(String[] args) {
-        if (args.length == 0)
-        {
-            System.out.println("Brak argumentów programu.");
-        }
-        else
+        if (!(args.length == 0))
         {
             float a = 0;
             for (int i = 0; i < args.length; i++) {
@@ -17,6 +13,10 @@ public class FloatArithmeticMean {
             System.out.printf("%10.3f%n",a);
             float res=a/args.length;
             System.out.printf("Średnia arytmetyczna: %.4f%n",res);
+        }
+        else
+        {
+            System.out.println("Brak argumentów programu.");
         }
     }
 }
