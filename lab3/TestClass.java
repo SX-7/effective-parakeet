@@ -1,15 +1,17 @@
 package lab3;
 
+import java.util.Vector;
+
 public class TestClass {
 
-    private static TestClass[] obj_array; // Array of all objects of the class
+    private static Vector<TestClass> obj_vec = new Vector<TestClass>(); // Array of all objects of the class
 
-    private static TestClass[] getObj_array() {
-        return obj_array;
+    private static Vector<TestClass> getObj_vec() {
+        return obj_vec;
     }
 
     private static void addObj_array(TestClass obj) {
-        TestClass.obj_array[TestClass.getObj_array().length]=obj;
+        TestClass.getObj_vec().add(obj);
     }
 
     private int number; // The number assigned to the object
@@ -42,14 +44,24 @@ public class TestClass {
         this.creation_time = creation_time;
     }
 
+    public static void printClassData() {
+        String out_str ="";
+        for (TestClass testClass : getObj_vec()) {
+            out_str = out_str.concat(Integer.toString(testClass.getNumber())+". ["+Long.toString(testClass.getCreation_time())+"]\n");
+        }
+        System.out.println(out_str);
+    }
+
     public TestClass() {
         this.setCreation_time(System.currentTimeMillis());
         TestClass.advanceCounter();
         this.setNumber(TestClass.getCounter());
         TestClass.addObj_array(this);
     }
-    
+
     public static void main(String[] args) {
-        // TODO: refer to the exercise sheet. Add int args support
+        TestClass testobj1 = new TestClass();
+        TestClass testobj2 = new TestClass();
+        TestClass.printClassData();
     }
 }

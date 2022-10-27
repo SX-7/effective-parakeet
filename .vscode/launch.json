@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestClass",
+            "request": "launch",
+            "mainClass": "lab3.TestClass",
+            "projectName": "effective-parakeet_577f716c"
+        },
+        {
+            "type": "java",
             "name": "Launch FloatArithmeticMean",
             "request": "launch",
             "mainClass": "lab3.FloatArithmeticMean",
