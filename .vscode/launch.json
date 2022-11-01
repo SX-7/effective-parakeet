@@ -6,6 +6,30 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestClass",
+            "request": "launch",
+            "mainClass": "lab3.TestClass",
+            "projectName": "effective-parakeet_577f716c",
+            "args": "300"
+        },
+        {
+            "type": "java",
+            "name": "Launch FloatArithmeticMean",
+            "request": "launch",
+            "mainClass": "lab3.FloatArithmeticMean",
+            "projectName": "effective-parakeet_577f716c",
+            "args": "2 3.1234 25.2339 12.5 100"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArithmeticMean",
+            "request": "launch",
+            "mainClass": "lab3.ArithmeticMean",
+            "projectName": "effective-parakeet_577f716c",
+            "args": "2 5 7 9"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
