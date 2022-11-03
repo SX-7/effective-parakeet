@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FileCopy",
+            "request": "launch",
+            "mainClass": "lab4.FileCopy",
+            "projectName": "effective-parakeet_1b418a04",
+            "args": "lab4/test.txt lab5/test2.txt"
+        },
+        {
+            "type": "java",
             "name": "Launch LineCounterPane",
             "request": "launch",
             "mainClass": "lab4.LineCounterPane",
