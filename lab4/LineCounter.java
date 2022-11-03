@@ -6,7 +6,10 @@ import java.io.IOException;
 
 public class LineCounter {
     public static void main(String[] args) {
-        //TODO: check if empty
+        if (args.length==0) {
+            System.out.println("Brak argumentów programu.");
+            System.exit(0);
+        }
         long lines = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
             while(br.readLine()!=null) lines++;
@@ -14,6 +17,6 @@ public class LineCounter {
             e.printStackTrace();
             //TODO: better exception handling
         }    
-        System.out.println(lines);
+        System.out.println("Liczba wierszy w pliku "+args[0]+" wynosi: "+lines);
     }
 }

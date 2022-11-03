@@ -4,6 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    
+        {
+            "type": "java",
+            "name": "Launch LineCounter",
+            "request": "launch",
+            "mainClass": "lab4.LineCounter",
+            "projectName": "effective-parakeet_1b418a04",
+            "args": "lab4/test.txt"
+        },
         {
             "type": "java",
             "name": "Launch TestClass",
