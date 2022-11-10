@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -20,6 +21,23 @@ public class FileAndURLCopy {
         }
         // the operation
 
+        if(args.length==1){
+            try {
+                URL url = new URL(args[0]);
+                try (InputStream in = url.openStream()) {
+                    Files.copy(in, Path.of(args[0].split(File.separator, 0)[args[0].split(File.separator, 0).length - 1]));
+                } catch (UnknownHostException e) {
+                    System.err.println("Nieznany host "+ args[0]);
+                } catch (Exception e) {
+                    System.err.println("Inny błąd pobierania");
+                    e.printStackTrace();
+                }
+            } catch (MalformedURLException e) {
+                System.err.println("Nie istnieje taki url");
+                System.exit(0);
+            }            
+        }
+
         try {
             if (Files.isDirectory(Path.of(args[1]))) {
                 args[1] = args[1] + args[0].split(File.separator, 0)[args[0].split(File.separator, 0).length - 1];
@@ -29,20 +47,11 @@ public class FileAndURLCopy {
                 throw new Exception(args[1] + " już istnieje");
             }
             //run a check and do a url copy if it's a url, otherwise do a file one
-            try {
-                URL url = new URL(args[0]);
-                try (InputStream in = url.openStream()) {
-                    Files.copy(in, Path.of(args[1]));
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
-            } catch (MalformedURLException e) {
-                if (Files.isDirectory(Path.of(args[0]))) {
-                    System.err.println(args[0] + " jest folderem");
-                    throw new Exception(args[0] + " jest folderem");
-                }
-                Files.copy(Path.of(args[0]), Path.of(args[1]));
-            }            
+            if (Files.isDirectory(Path.of(args[0]))) {
+                System.err.println(args[0] + " jest folderem");
+                throw new Exception(args[0] + " jest folderem");
+            }
+            Files.copy(Path.of(args[0]), Path.of(args[1]));
         } catch (NoSuchFileException e) {
             System.err.println("Plik " + args[0] + " nie istnieje.");
         } catch (AccessDeniedException e) {
