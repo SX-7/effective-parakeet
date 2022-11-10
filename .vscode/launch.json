@@ -10,7 +10,7 @@
             "request": "launch",
             "mainClass": "lab4.FileAndURLCopy",
             "projectName": "effective-parakeet_1b418a04",
-            "args": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html lab4/test2.txt"
+            "args": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html"
         },
         {
             "type": "java",
