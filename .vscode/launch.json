@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DrawSquare",
+            "request": "launch",
+            "mainClass": "lab5.DrawSquare",
+            "projectName": "effective-parakeet_1b418a04"
+        },
+        {
+            "type": "java",
             "name": "Launch FileAndURLCopy",
             "request": "launch",
             "mainClass": "lab4.FileAndURLCopy",
