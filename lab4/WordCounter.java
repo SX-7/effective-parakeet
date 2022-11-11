@@ -48,7 +48,7 @@ public class WordCounter {
             }
         }
         // Fallback dla braku opcji
-        if (!(lin & wor & cha)) {
+        if (!lin && !wor && !cha) {
             lin = true;
             wor = true;
             cha = true;

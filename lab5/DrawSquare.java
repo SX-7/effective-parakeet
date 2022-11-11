@@ -16,8 +16,8 @@ public class DrawSquare {
             System.err.println("Za mały rozmiar");
             System.exit(0);
         }
-        //fast way out for size==1
-        if (size==1) {
+        // fast way out for size==1
+        if (size == 1) {
             System.out.println("#");
             System.exit(0);
         }
@@ -27,9 +27,9 @@ public class DrawSquare {
         }
         System.out.println();
         // body
-        for (int y = 1; y < size-1; y++) {
+        for (int y = 1; y < size - 1; y++) {
             System.out.print("#");
-            for (int j = 1; j < size-1; j++) {
+            for (int j = 1; j < size - 1; j++) {
                 System.out.print(" ");
             }
             System.out.print("#");

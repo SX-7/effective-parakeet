@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MultiplicationTable",
+            "request": "launch",
+            "mainClass": "lab5.MultiplicationTable",
+            "projectName": "effective-parakeet_1b418a04"
+        },
+        {
+            "type": "java",
             "name": "Launch DrawTriangle",
             "request": "launch",
             "mainClass": "lab5.DrawTriangle",
@@ -32,7 +39,7 @@
             "request": "launch",
             "mainClass": "lab4.WordCounter",
             "projectName": "effective-parakeet_1b418a04",
-            "args": "lab4/test.txt"
+            "args": "lab4/test.txt -w -c"
         },
         {
             "type": "java",
