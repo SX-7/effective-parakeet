@@ -1,5 +1,3 @@
-package lab3;
-
 import java.util.Vector;
 
 public class TestClass {

@@ -1,5 +1,3 @@
-package lab4;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,7 +16,7 @@ public class LineCounterPane {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
-            // TODO: better exception handling
+            
         }
 
         JOptionPane.showMessageDialog(null, "Liczba wierszy w pliku " + inputValue + " wynosi: " + lines, "Wynik", JOptionPane.PLAIN_MESSAGE);

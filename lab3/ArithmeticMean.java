@@ -1,5 +1,3 @@
-package lab3;
-
 public class ArithmeticMean {
     public static void main(String[] args) {
         if (args.length == 0) {

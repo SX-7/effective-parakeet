@@ -1,5 +1,3 @@
-package lab2;
-
 public class CommandLineArguments {
     public static void parse(String[] args) {
         System.out.println("Liczba argumentów: " + args.length);

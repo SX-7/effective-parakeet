@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch WordCounter",
+            "request": "launch",
+            "mainClass": "WordCounter",
+            "projectName": "effective-parakeet_1b418a04"
+        },
+        {
+            "type": "java",
             "name": "Launch MultiplicationTable",
             "request": "launch",
             "mainClass": "lab5.MultiplicationTable",

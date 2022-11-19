@@ -1,5 +1,3 @@
-package lab4;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -70,7 +68,7 @@ public class WordCounter {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            // TODO: better exception handling
+            
         }
         // get results
         if (lin) {
