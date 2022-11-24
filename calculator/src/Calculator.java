@@ -12,15 +12,20 @@ import javax.swing.JTextField;
 public class Calculator {
 
     public static void createAndShowGUI() {
+        //make a new window
         JFrame jf = new JFrame("Calculator");
         
+        //create two parts of it as panels
         JPanel viewbox = new JPanel(new BorderLayout());
         JPanel buttons = new JPanel(new GridLayout(4,4)); 
+        //lay them out
         jf.getContentPane().add(viewbox,BorderLayout.NORTH);
         jf.getContentPane().add(buttons,BorderLayout.SOUTH);
+        //set properties
         jf.setLocationRelativeTo(null);
         jf.setResizable(false);
 
+        //create a read only text field, set properties, put it in container
         JTextField tf = new JTextField();
         tf.setEditable(false);
         tf.setText("0");
@@ -28,12 +33,14 @@ public class Calculator {
         tf.setHorizontalAlignment(JTextField.TRAILING);
         viewbox.add(tf,BorderLayout.CENTER);
 
+        //common action listener for buttons - to be adjusted later
         ActionListener myActionListener = new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			System.out.println("[ActionListener] Button = "+e.getActionCommand());
     		}    		
     	};
 
+        //gigantic slog of creating buttons
         JButton b1 = new JButton("1");
         b1.addActionListener(myActionListener);
         buttons.add(b1);
@@ -93,6 +100,7 @@ public class Calculator {
 
 	
     public static void main(String[] args) {
+        //invoking the gui
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() { createAndShowGUI(); }
         });        
