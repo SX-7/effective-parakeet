@@ -55,7 +55,7 @@ public class WordCounter {
         long lines = 0;
         long words = 0;
         long chars = 0;
-        try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String curr = null;
             while (true) {
                 curr = br.readLine();

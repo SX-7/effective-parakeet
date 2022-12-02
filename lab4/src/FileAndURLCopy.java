@@ -19,13 +19,28 @@ public class FileAndURLCopy {
         }
         // the operation
 
-        if(args.length==1){
+        // test if first arg is url
+        boolean isUrl = false;
+        try {
+            URL url = new URL(args[0]);
+            isUrl = true;
+        } catch (MalformedURLException e) {
+
+        }
+
+        if (isUrl) {
             try {
                 URL url = new URL(args[0]);
                 try (InputStream in = url.openStream()) {
-                    Files.copy(in, Path.of(args[0].split(File.separator, 0)[args[0].split(File.separator, 0).length - 1]));
+                    Path fp = null;
+                    if (args.length == 2) {
+                        fp = Path.of(args[1]);
+                    } else {
+                        fp = Path.of(args[0].split(File.separator, 0)[args[0].split(File.separator, 0).length - 1]);
+                    }
+                    Files.copy(in,fp);
                 } catch (UnknownHostException e) {
-                    System.err.println("Nieznany host "+ args[0]);
+                    System.err.println("Nieznany host " + args[0]);
                 } catch (Exception e) {
                     System.err.println("Inny błąd pobierania");
                     e.printStackTrace();
@@ -33,7 +48,8 @@ public class FileAndURLCopy {
             } catch (MalformedURLException e) {
                 System.err.println("Nie istnieje taki url");
                 System.exit(0);
-            }            
+            }
+            System.exit(0);
         }
 
         try {
@@ -44,7 +60,7 @@ public class FileAndURLCopy {
                 System.err.println(args[1] + " już istnieje");
                 throw new Exception(args[1] + " już istnieje");
             }
-            //run a check and do a url copy if it's a url, otherwise do a file one
+            // run a check and do a url copy if it's a url, otherwise do a file one
             if (Files.isDirectory(Path.of(args[0]))) {
                 System.err.println(args[0] + " jest folderem");
                 throw new Exception(args[0] + " jest folderem");

@@ -19,17 +19,9 @@ public class DrawTriangle {
             System.out.println("#");
             System.exit(0);
         }
-        int width = 0;
-        {
-            Double dw = Double.valueOf(height);
-            dw = 2 * dw / Math.sqrt(3);
-            width = (int) Math.ceil(dw);
-        }
+        int width = (height*2)-1;
         for (int i = 1; i <= height; i++) {
-            int localWidth = 0;
-            Double dw = Double.valueOf(i);
-            dw = 2 * dw / Math.sqrt(3);
-            localWidth = (int) Math.round(dw);
+            int localWidth = (i*2)-1;
             // prefix empty/blank spaces
             for (int j = 0; j < Double.valueOf(width - localWidth) / 2; j++) {
                 System.out.print(" ");
@@ -41,7 +33,7 @@ public class DrawTriangle {
             // new line
             System.out.println();
         }
-        System.out.println(height + " " + width);
+        //System.out.println(height + " " + width);
 
     }
 }

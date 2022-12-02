@@ -83,7 +83,7 @@ public class MultiplicationTable {
             }
             // calculate the percentage
             // check iteration
-            if ((!(i-1 < minRep)) && (percent < (100 * (double) right / (double) (right + wrong)))) {
+            if ((!(i+1 < minRep)) && (percent <= (100 * (double) right / (double) (right + wrong)))) {
                 break;
             }
             // if both are within values, end and display results
