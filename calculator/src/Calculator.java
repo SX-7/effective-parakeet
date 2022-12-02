@@ -12,35 +12,109 @@ import javax.swing.JTextField;
 public class Calculator {
 
     public static void createAndShowGUI() {
-        //make a new window
+        // make a new window
         JFrame jf = new JFrame("Calculator");
-        
-        //create two parts of it as panels
+
+        // create two parts of it as panels
         JPanel viewbox = new JPanel(new BorderLayout());
-        JPanel buttons = new JPanel(new GridLayout(4,4)); 
-        //lay them out
-        jf.getContentPane().add(viewbox,BorderLayout.NORTH);
-        jf.getContentPane().add(buttons,BorderLayout.SOUTH);
-        //set properties
+        JPanel buttons = new JPanel(new GridLayout(4, 4));
+        // lay them out
+        jf.getContentPane().add(viewbox, BorderLayout.NORTH);
+        jf.getContentPane().add(buttons, BorderLayout.SOUTH);
+        // set properties
         jf.setLocationRelativeTo(null);
         jf.setResizable(false);
 
-        //create a read only text field, set properties, put it in container
+        // create a read only text field, set properties, put it in container
         JTextField tf = new JTextField();
         tf.setEditable(false);
         tf.setText("0");
-        tf.setFont(new Font(Font.SANS_SERIF,Font.BOLD,16));
+        tf.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
         tf.setHorizontalAlignment(JTextField.TRAILING);
-        viewbox.add(tf,BorderLayout.CENTER);
+        viewbox.add(tf, BorderLayout.CENTER);
 
-        //common action listener for buttons - to be adjusted later
+        // common action listener for buttons - to be adjusted later
+        // we don't need to make a new object, since this one is all we'll need and use
         ActionListener myActionListener = new ActionListener() {
-    		public void actionPerformed(ActionEvent e) {
-    			System.out.println("[ActionListener] Button = "+e.getActionCommand());
-    		}    		
-    	};
+            private JTextField textField = tf;
+            private Integer leftSide = 0;
+            private Integer rightSide = 0;
+            private String operator = "";
 
-        //gigantic slog of creating buttons
+            public void actionPerformed(ActionEvent event) {
+                // we get the symbol
+                // identify it, and dispatch to function that deals with it
+                // first try to parse it as int
+                try {
+                    // if it fails it's not an int
+                    tf.setText(this.parseNumber(Integer.parseInt(event.getActionCommand())));
+                    return; // that's it, let's continue
+                } catch (Exception exception) {
+                    // do nothing, just continue the checks
+                }
+                // it is not an int, so now just run a simple switch
+                switch (event.getActionCommand()) {
+                    case "C":
+                        tf.setText(this.clear());
+                        break;
+                    case "=":
+                        tf.setText(this.equals());
+                        break;
+                    case "+":
+                        tf.setText(this.add());
+                        break;
+                    case "-":
+                        tf.setText(this.substract());
+                        break;
+                    case "/":
+                        tf.setText(this.divide());
+                        break;
+                    case "*":
+                        tf.setText(this.multiply());
+                        break;
+                    default:
+                        System.err.println("some error happened while parsing symbols!");
+                        break;
+                }
+            }
+
+            private String parseNumber(Integer number) {
+                // TODO: number parsing
+                return Integer.toString(number);
+            }
+
+            private String clear() {
+                // TODO: clearing
+                return "C";
+            }
+
+            private String equals() {
+                // TODO: equaling
+                return "=";
+            }
+
+            private String divide() {
+                // TODO: division
+                return "/";
+            }
+
+            private String multiply() {
+                // TODO: multiplication
+                return "*";
+            }
+
+            private String add() {
+                // TODO: addition
+                return "+";
+            }
+
+            private String substract() {
+                // TODO: substraction
+                return "-";
+            }
+        };
+
+        // gigantic slog of creating buttons
         JButton b1 = new JButton("1");
         b1.addActionListener(myActionListener);
         buttons.add(b1);
@@ -98,12 +172,13 @@ public class Calculator {
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-	
     public static void main(String[] args) {
-        //invoking the gui
+        // invoking the gui
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() { createAndShowGUI(); }
-        });        
+            public void run() {
+                createAndShowGUI();
+            }
+        });
     }
 
 }
