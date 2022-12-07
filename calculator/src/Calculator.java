@@ -149,7 +149,6 @@ public class Calculator {
                             // the most basic of basic, just run a switch for operator
                             // after applying it, move the result, but change nothing
                             // *also* we assume that there are two non null args, which makes sense
-                            // TODO: this will likely fail, observe and fix
                             // possibly in case of -1, as operator doesn't set left to 0
                             switch (this.operator) {
                                 case "+":
