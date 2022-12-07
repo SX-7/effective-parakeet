@@ -7,7 +7,8 @@ public class DrawTriangle {
         try (Scanner sc = new Scanner(System.in)) {
             height = Integer.parseInt(sc.nextLine());
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Błędne dane wejściowe");
+            System.exit(0);
         }
         // catch height mismatch
         if (height < 1) {
