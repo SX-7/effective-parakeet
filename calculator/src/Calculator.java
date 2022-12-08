@@ -22,7 +22,7 @@ public class Calculator {
         jf.getContentPane().add(viewbox, BorderLayout.NORTH);
         jf.getContentPane().add(buttons, BorderLayout.SOUTH);
         // set properties
-        jf.setLocationRelativeTo(null);
+        
         jf.setResizable(false);
 
         // create a read only text field, set properties, put it in container
@@ -359,6 +359,7 @@ public class Calculator {
         buttons.add(bdiv);
 
         jf.pack();
+        jf.setLocationRelativeTo(null);
         jf.setVisible(true);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
