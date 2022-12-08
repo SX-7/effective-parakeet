@@ -161,7 +161,12 @@ public class Calculator {
                                     this.leftSide = this.leftSide * this.rightSide;
                                     break;
                                 case "/":
-                                    this.leftSide = this.leftSide / this.rightSide;
+                                    try {
+                                        this.leftSide = this.leftSide / this.rightSide;
+                                    } catch (Exception e) {
+                                        this.clear();
+                                        return "ERROR: div by zero";
+                                    }
                                     break;
                                 default:
                                     System.err.println("error switch case equal after number");
@@ -257,7 +262,18 @@ public class Calculator {
                             this.operator = operator;
                         } else {
                             // there was an operator, so we have to calc it
-                            this.equals();
+                            String returnMessage = this.equals(); // this can return "error" message, in which case we
+                                                                  // have to stop this function and just return the
+                                                                  // message instead, sadly no try catch here as it's
+                                                                  // done one level below
+                            // this shouldn't be done but is quick and easy
+                            try {
+                                Integer.parseInt(returnMessage);
+                            } catch (Exception e) {
+                                // this means we have done the goofed and it's a string containing an error
+                                // message, return
+                                return(returnMessage);
+                            }
                             // the output is on left now, so just change operator and apply null
                             this.operator = operator;
                             this.rightSide = null;
