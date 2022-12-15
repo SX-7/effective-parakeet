@@ -203,7 +203,12 @@ public class Calculator {
                                 break;
                             case "/":
                                 this.rightSide = this.leftSide;
-                                this.leftSide = this.leftSide / this.leftSide;
+                                try {
+                                    this.leftSide = this.leftSide / this.leftSide;
+                                } catch (Exception e) {
+                                    this.clear();
+                                    return "ERROR: div by zero";
+                                }
                                 break;
                             default:
                                 System.err.println("error switch case equal after operator");
